@@ -11,7 +11,8 @@
       "bullets": [
         "Proposed, designed, and built an image-processing pipeline in Python to detect sample interfaces on a 2-photon lithography system, applying piecewise regression models and vectorized array calculations to generate 3D surface maps of warping, tilt, and roughness for precise print-plane calibration.",
         "Built a GPU-accelerated lens simulation tool in PyTorch with a Streamlit GUI, enabling ~10x speedup in realistic diffraction modeling of complex optical systems.",
-        "Designed and fabricated optical components using 2-photon lithography; validated performance using image-analysis scripts and metrology tools.",
+        "Synthesized porous silicon wafers via sol-gel processing and characterized microstructure-property relationships using SEM and mechanical testing (nanoindentation, tensile, compression), linking pore and crack morphology to strength for tuning supercritical CO2 drying and kiln-anneal process parameters.",
+        "Designed and fabricated optical components using 2-photon lithography, validated performance using image-analysis scripts and metrology tools.",
         "Modeled and machined precise mounting components for optical breadboard setups, enabling the optical engineers to create more complex custom lithography and metrology systems."
       ],
       "skills": ["Python","PyTorch","Scikit","SciPy","NumPy","Image Processing","Wave Optics","2-Photon Lithography","Confocal Microscopy","Streamlit"]
