@@ -1,19 +1,28 @@
 {
   "projects": [
     {
-      "title": "Olevius",
-      "dates": "June 2025 - Present",
-      "blurb": "Novel blood pressure monitor - wrist-worn, continuous, and cuffless.",
-      "cover": "/images/projects/olevius/Olevius.png",
-      "link": "https://olevius.info/",       
-      "link_text": "View Website",
+      "title": "Autonomous EV Charging Location Optimizer",
+      "dates": "Dec 2025",
+      "blurb": "Mixed Integer Programming model to optimize locations for autonomous EV charging stations.",
+      "cover": "/images/projects/ev-optimizer/streetmap_final-results.png",
+      "link": "https://github.com/mqzpt/autonomous-fleet-charging-optimization",       
+      "link_text": "View GitHub Repo",
       "bullets": [
-        "Engineering capstone project, aiming to grow into a startup.",
-        "Building a wrist-worn device to measure blood pressure continuously without a traditional cuff.",
-        "Clinical accuracy goal of ±3 mmHg, comparable to gold-standard cuff-based measurements.",
-        "My roles: mechanical design and fabrication, optical simulation and fabrication, signal processing"
+        "Built a Python geospatial pipeline using OSMnx/NetworkX to pull the city road graph, generate candidate station sites, and compute network-based travel distances.",
+        "Formulated a Mixed-Integer Programming facility-location model to place new L2/DC fast-charging sites and optionally acquire/retrofit existing stations (from OpenChargeMap) under budget and capacity constraints.",
+        "Modeled demand as weighted nodes (weighted by the city's point-of-interest density) and minimized the demand-weighted travel distance for charging from each demand node using GurobiPy.",
+        "Implemented constraint logic for real-world feasibility (site selection, station capacities, upgrade decisions, and budget tradeoffs) and ran scenario sweeps to study how solutions change with assumptions.",
+        "Generated map-based visualizations of demand density and station locations to make the output interpretable and easy to validate.",
+        "Packaged the project as a reproducible repo with clear inputs/outputs so the same pipeline can be rerun for new cities, new budgets, or different demand distributions."
       ],
-      "skills": ["Optical Simulation", "Signal Processing", "python", "Fiber Optics", "Fusion360", "COMSOL"]
+      "skills": ["Python", "Data Processing", "Gurobi", "Integer Programming", "Linear Programming", "Operations Research"],
+      "gallery": [
+        "/images/projects/ev-optimizer/streetmap_basic.png",
+        "/images/projects/ev-optimizer/streetmap_candidates.png",
+        "/images/projects/ev-optimizer/streetmap_demand-nodes.png",
+        "/images/projects/ev-optimizer/streetmap_stations.png",
+        "/images/projects/ev-optimizer/streetmap_final-results.png"
+      ]
     },
 
     {
@@ -38,6 +47,22 @@
         "/images/projects/lens-sim/gui3.png",
         "/images/projects/lens-sim/gui4.png"
       ]
+    },
+
+    {
+      "title": "Olevius",
+      "dates": "June 2025 - Present",
+      "blurb": "Novel blood pressure monitor - wrist-worn, continuous, and cuffless.",
+      "cover": "/images/projects/olevius/Olevius.png",
+      "link": "https://olevius.info/",       
+      "link_text": "View Website",
+      "bullets": [
+        "Engineering capstone project, aiming to grow into a startup.",
+        "Building a wrist-worn device to measure blood pressure continuously without a traditional cuff.",
+        "Clinical accuracy goal of ±3 mmHg, comparable to gold-standard cuff-based measurements.",
+        "My roles: mechanical design and fabrication, optical simulation and fabrication, signal processing"
+      ],
+      "skills": ["Optical Simulation", "Signal Processing", "python", "Fiber Optics", "Fusion360", "COMSOL"]
     },
 
     {
