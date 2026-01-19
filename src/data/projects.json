@@ -12,14 +12,13 @@
         "Formulated a Mixed-Integer Programming facility-location model to place new L2/DC fast-charging sites and optionally acquire/retrofit existing stations (from OpenChargeMap) under budget and capacity constraints.",
         "Modeled demand as weighted nodes (weighted by the city's point-of-interest density) and minimized the demand-weighted travel distance for charging from each demand node using GurobiPy.",
         "Implemented constraint logic for real-world feasibility (site selection, station capacities, upgrade decisions, and budget tradeoffs) and ran scenario sweeps to study how solutions change with assumptions.",
-        "Generated map-based visualizations of demand density and station locations to make the output interpretable and easy to validate.",
-        "Packaged the project as a reproducible repo with clear inputs/outputs so the same pipeline can be rerun for new cities, new budgets, or different demand distributions."
+        "Generated map-based visualizations of demand density and station locations to make the output interpretable and easy to validate."
       ],
       "skills": ["Python", "Data Processing", "Gurobi", "Integer Programming", "Linear Programming", "Operations Research"],
       "gallery": [
         "/images/projects/ev-optimizer/streetmap_basic.png",
         "/images/projects/ev-optimizer/streetmap_candidates.png",
-        "/images/projects/ev-optimizer/streetmap_demand-nodes.png",
+        "/images/projects/ev-optimizer/streetmap_demand-node.png",
         "/images/projects/ev-optimizer/streetmap_stations.png",
         "/images/projects/ev-optimizer/streetmap_final-results.png"
       ]
