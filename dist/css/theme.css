@@ -214,10 +214,6 @@ header.site-nav{
 details.card{ box-sizing: border-box; display: inline-block; width: auto; max-width: 100%; position: relative; }
 details.card[open]{ display: inline-block; max-width: 100%; }
 
-/* Gallery */
-details.card .gallery{ overflow-x: visible; display: flex; flex-wrap: wrap; gap: 12px; }
-details.card .thumb{ flex: 1 1 280px; max-width: 100%; }
-details.card .thumb img{ width: 100%; height: auto; display: block; border-radius: 12px; }
 
 /* Phones: full width */
 @media (max-width: 720px){
@@ -482,8 +478,13 @@ details.card .thumb img{ width: 100%; height: auto; display: block; border-radiu
   /* Pills + gallery */
   .pills{ gap: 8px; }
   .gallery{ gap: 10px; }
-  .gallery .thumb{ flex: 1 1 46%; }      /* two-up grid */
-  .gallery .thumb img{ border-radius: 10px; }
+  .gallery .thumb{
+    max-width: 100%;
+  }
+  .gallery .thumb img{
+    max-height: 220px;
+    border-radius: 10px;
+  }
 
   /* Lightbox */
   .lb-backdrop{ padding: 12px; }
@@ -523,3 +524,5 @@ details.card .thumb img{ width: 100%; height: auto; display: block; border-radiu
     --nav-gap: 14px;
   }
 }
+
+
