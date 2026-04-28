@@ -1,47 +1,101 @@
 // src/pages/projects.ts
-import { mountNavbar }   from "../components/navbar";
-import { typewriter }    from "../components/typewriter";
-import { cardHTML }      from "../components/expander";
-import projects          from "../data/projects.json";
+import { mountNavbar } from "../components/navbar";
+import { typewriter } from "../components/typewriter";
+import { cardHTML, type CardOpts } from "../components/expander";
+import projects from "../data/projects.json";
 import { mountLightbox } from "../components/lightbox";
-import { revealStagger } from "../components/reveal";
 
-// path normalizer 
-const fix = (p?: string) => (p ? (p.startsWith("/images/") ? p : `/images/${p}`) : undefined);
+type RawProject = CardOpts;
 
-export function mountProjects(){
+const data = projects as { projects: RawProject[] };
+
+const isAbsoluteUrl = (value: string) =>
+  /^(https?:)?\/\//.test(value) || value.startsWith("data:");
+
+const fixImagePath = (path?: string) => {
+  if (!path) return undefined;
+  if (isAbsoluteUrl(path) || path.startsWith("/")) return path;
+  if (path.startsWith("images/")) return `/${path}`;
+  return `/images/${path}`;
+};
+
+const fixAssetPath = (path?: string) => {
+  if (!path) return undefined;
+  if (isAbsoluteUrl(path) || path.startsWith("/")) return path;
+  return `/${path}`;
+};
+
+const normalizeProject = (project: RawProject): CardOpts => {
+  const legacyLinkHref = project.link_url ?? project.link;
+  const legacyLinkLabel = project.link_text ?? project.cta ?? project.linkText;
+
+  const links = [
+    ...(Array.isArray(project.links)
+      ? project.links
+          .filter((link) => link?.label && link?.href)
+          .map((link) => ({
+            label: link.label,
+            href: fixAssetPath(link.href)!,
+          }))
+      : []),
+    ...(legacyLinkHref && legacyLinkLabel
+      ? [
+          {
+            label: legacyLinkLabel,
+            href: fixAssetPath(legacyLinkHref)!,
+          },
+        ]
+      : []),
+  ];
+
+  const dedupedLinks: NonNullable<CardOpts["links"]> = [];
+  const seen = new Set<string>();
+
+  for (const link of links) {
+    const key = `${link.label}__${link.href}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    dedupedLinks.push(link);
+  }
+
+  return {
+    ...project,
+    cover: fixImagePath(project.logo || project.cover),
+    links: dedupedLinks,
+    gallery: Array.isArray(project.gallery)
+      ? project.gallery
+          .map((item) => {
+            if (typeof item === "string") {
+              return fixImagePath(item) ?? item;
+            }
+
+            const src = fixImagePath(item?.src);
+            if (!src) return null;
+
+            return {
+              src,
+              alt: item.alt ?? "",
+            };
+          })
+          .filter(Boolean) as CardOpts["gallery"]
+      : [],
+  };
+};
+
+export function mountProjects() {
   mountNavbar("projects");
 
-  const main = document.querySelector("main")!;
+  const main = document.querySelector("main");
+  if (!main) return;
+
   main.innerHTML = `<h1 id="ty"></h1><div id="cards" class="proj-list"></div>`;
   typewriter(document.querySelector("#ty")!, "I've been working on...");
 
-  const list = document.querySelector<HTMLDivElement>("#cards")!;
+  const list = document.querySelector<HTMLDivElement>("#cards");
+  if (!list) return;
 
-  const cards = (projects as any).projects.map((p:any) => {
-    // prefer explicit cover/logo from JSON; normalize if it’s just a filename
-    const cover = fix(p.logo || p.cover);
-    return cardHTML({
-      cover,
-      title:   p.title,
-      dates:   p.dates,
-      blurb:   p.blurb,
-      bullets: p.bullets,
-      skills:  p.skills,
-      gallery: p.gallery,
-      link_text: p.link_text ?? p.cta ?? p.linkText,
-      link_url:  p.link_url  ?? p.link
-    });
-  }).join("");
+  list.innerHTML = data.projects.map((project) => cardHTML(normalizeProject(project))).join("");
 
-  list.innerHTML = cards;
-
-  document.querySelector("main")!.classList.add("projects-page");
-
+  main.classList.add("projects-page");
   mountLightbox();
-
-  const _cards = Array.from(document.querySelectorAll<HTMLDetailsElement>(".proj-list details.card"));
-  _cards.forEach((el, i) => el.style.setProperty("--d", `${i*90}ms`));
-  _cards.forEach(el => el.classList.add("reveal-base", "reveal-up"));
-  revealStagger(_cards, { step: 90, start: 0 });
 }

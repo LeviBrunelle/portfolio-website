@@ -1,6 +1,87 @@
 {
   "projects": [
     {
+      "title": "Olevius",
+      "dates": "June 2025 - April 2026",
+      "blurb": "Cuffless, wrist-worn blood pressure monitoring prototype using a custom fiber-optic sensor embedded in a PDMS pouch.",
+      "cover": "/images/projects/olevius/Olevius.png",
+      "links": [
+        {
+          "label": "View Slides",
+          "href": "/files/olevius-capstone-slides.pdf"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Overview",
+          "body": [
+            "Fourth-year Nanotechnology Engineering capstone project focused on continuous, non-invasive blood pressure monitoring at the wrist."
+          ],
+          "bullets": [
+            "Developed as a proof-of-concept alternative to cuff-based monitoring and indirect optical wearable approaches.",
+            "Used a custom fiber-optic sensing element embedded in a glycerol-filled PDMS pouch to capture arterial pulse waveforms without a traditional cuff.",
+            "Integrated into a wrist-worn prototype with wireless signal streaming and mobile-app visualization."
+          ]
+        },
+        {
+          "title": "My Role",
+          "body": [
+            "I was the optomechanical lead, responsible for the core sensing hardware and physical integration of the device."
+          ],
+          "bullets": [
+            "Designed and machined custom aluminum molds for the multilayer PDMS pouch.",
+            "Developed the fabrication and assembly process, including PDMS casting, bonding, and glycerol filling.",
+            "Fabricated the embedded fiber-optic sensor and integrated it into the pouch.",
+            "Designed the wrist-mounted housing and explored miniature custom fiber couplers for a future miniaturized revision."
+          ]
+        },
+        {
+          "title": "Mechanism",
+          "body": [
+            "The sensing concept converted artery-driven deformation into a measurable optical signal."
+          ],
+          "bullets": [
+            "Light is transmitted between two aligned optical fibers, across a gap maintained between the fibers by means of a short length of microcatheter tubing.",
+            "Arterial pulses deform the sensor face, and the fluid-filled PDMS pouch transmits that force to the fiber joint.",
+            "Fiber misalignment changes optical transmission, producing a continuous pulse waveform for downstream processing."
+          ]
+        },
+        {
+          "title": "Results",
+          "body": [
+            "The final prototype demonstrated continuous wireless signal capture and preliminary blood-pressure prediction within the project target."
+          ],
+          "bullets": [
+            "Data was collected from 14 participants under resting and post-exercise conditions.",
+            "The preliminary model achieved mean absolute errors of 3.38 ± 4.00 mmHg for systolic pressure and 2.87 ± 3.28 mmHg for diastolic pressure.",
+            "The sensing hardware reached wearable scale, while electronics miniaturization remained future work for a V2 revision."
+          ]
+        }
+      ],
+      "skills": [
+        "Fiber Optics",
+        "Optomechanical Design",
+        "PDMS Fabrication",
+        "Microfluidics",
+        "CNC Machining",
+        "Signal Processing",
+        "Python",
+        "COMSOL",
+        "Fusion 360"
+      ],
+
+      "gallery": [
+        "/images/projects/olevius/Device.png",
+        "/images/projects/olevius/Mechanism.png",
+        "/images/projects/olevius/Explosion.png",
+        "/images/projects/olevius/Molds.png",
+        "/images/projects/olevius/Sensor-parts.png",
+        "/images/projects/olevius/Finished-sensor.png",
+        "/images/projects/olevius/Joint.png"
+      ]
+    },
+    
+    {
       "title": "Autonomous EV Charging Location Optimizer",
       "dates": "Dec 2025",
       "blurb": "Mixed Integer Programming model to optimize locations for autonomous EV charging stations.",
@@ -48,21 +129,7 @@
       ]
     },
 
-    {
-      "title": "Olevius",
-      "dates": "June 2025 - Present",
-      "blurb": "Novel blood pressure monitor - wrist-worn, continuous, and cuffless.",
-      "cover": "/images/projects/olevius/Olevius.png",
-      "link": "https://olevius.info/",       
-      "link_text": "View Website",
-      "bullets": [
-        "Engineering capstone project, aiming to grow into a startup.",
-        "Building a wrist-worn device to measure blood pressure continuously without a traditional cuff.",
-        "Clinical accuracy goal of ±3 mmHg, comparable to gold-standard cuff-based measurements.",
-        "My roles: mechanical design and fabrication, optical simulation and fabrication, signal processing"
-      ],
-      "skills": ["Optical Simulation", "Signal Processing", "python", "Fiber Optics", "Fusion360", "COMSOL"]
-    },
+    
 
     {
       "title": "Knife Vise",

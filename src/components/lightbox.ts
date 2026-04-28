@@ -1,24 +1,57 @@
 // src/components/lightbox.ts
 export function mountLightbox() {
-  const root = document.body;
-  const lb = document.createElement("div");
-  lb.className = "lb-backdrop";
-  lb.innerHTML = `<div class="lb-wrap"><img alt=""></div><button class="lb-close" aria-label="Close">×</button>`;
-  root.appendChild(lb);
+  let lb = document.querySelector<HTMLDivElement>(".lb-backdrop");
+
+  if (!lb) {
+    lb = document.createElement("div");
+    lb.className = "lb-backdrop";
+    lb.innerHTML = `
+      <div class="lb-wrap">
+        <img alt="">
+      </div>
+      <button class="lb-close" aria-label="Close">×</button>
+    `;
+    document.body.appendChild(lb);
+  }
+
+  if (lb.dataset.bound === "true") return;
+  lb.dataset.bound = "true";
 
   const img = lb.querySelector("img") as HTMLImageElement;
-  const close = () => { lb.classList.remove("show"); document.body.style.overflow = ""; };
+  const closeBtn = lb.querySelector(".lb-close") as HTMLButtonElement;
 
-  lb.addEventListener("click",  (e) => { if (e.target === lb) close(); });
-  (lb.querySelector(".lb-close") as HTMLButtonElement).onclick = close;
-  window.addEventListener("keydown", (e) => { if (e.key === "Escape" && lb.classList.contains("show")) close(); });
+  const close = () => {
+    lb!.classList.remove("show");
+    document.body.style.overflow = "";
+    img.removeAttribute("src");
+  };
 
-  root.addEventListener("click", (e) => {
-    const a = (e.target as HTMLElement).closest("a.thumb") as HTMLAnchorElement | null;
-    if (!a) return;
+  lb.addEventListener("click", (e) => {
+    if (e.target === lb) close();
+  });
+
+  closeBtn.addEventListener("click", close);
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lb!.classList.contains("show")) {
+      close();
+    }
+  });
+
+  document.body.addEventListener("click", (e) => {
+    const trigger = (e.target as HTMLElement).closest<HTMLElement>("[data-lb], a.thumb");
+    if (!trigger) return;
+
+    const href =
+      trigger.getAttribute("data-lb") ||
+      trigger.getAttribute("href") ||
+      "";
+
+    if (!href) return;
+
     e.preventDefault();
-    img.src = a.dataset.lb || a.getAttribute("href") || "";
-    lb.classList.add("show");
+    img.src = href;
+    lb!.classList.add("show");
     document.body.style.overflow = "hidden";
   });
 }
