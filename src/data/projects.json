@@ -7,7 +7,7 @@
       "cover": "/images/projects/olevius/Olevius.png",
       "links": [
         {
-          "label": "View Slides",
+          "label": "View Presentation Slides",
           "href": "/files/olevius-capstone-slides.pdf"
         }
       ],
@@ -24,21 +24,48 @@
           ]
         },
         {
+          "title": "Problem",
+          "body": [
+            "Continuous blood pressure monitoring is important for early detection of cardiovascular disease, but current methods are either invasive or uncomfortable for long-term use."
+          ]
+        },
+        {
           "title": "My Role",
           "body": [
             "I was the optomechanical lead, responsible for the core sensing hardware and physical integration of the device."
           ],
           "bullets": [
-            "Designed and machined custom aluminum molds for the multilayer PDMS pouch.",
-            "Developed the fabrication and assembly process, including PDMS casting, bonding, and glycerol filling.",
-            "Fabricated the embedded fiber-optic sensor and integrated it into the pouch.",
+            "Built Python and COMSOL simulations.",
+            "Developed the fabrication and assembly processes for PDMS components and the fiber sensor.",
+            "Designed the wrist-mounted housing."
+          ]
+        },
+        {
+          "title": "Simulation & Design",
+          "body": [],
+          "bullets": [
+            "Simulated mechanical deformation of the PDMS membrane and fluid-filled pouch under applied pressure using COMSOL.",
+            "Modeled how membrane deformation changed optical transmission across the fiber sensor gap.",
+            "Ran ray-based and diffraction-based simulations to estimate optical signal strength and inform hardware sensitivity requirements.",
+            "Used simulation results to optimize fiber gap length, predict signal levels, and reduce uncertainty before building the physical prototype."
+          ]
+        },
+        {
+          "title": "Sensor Fabrication ",
+          "body": [],
+          "bullets": [
+            "Designed and CNC-machined custom aluminum molds for the multilayer PDMS fluidic pouch.",
+            "Developed and optimized the fabrication and assembly process, including PDMS casting, bonding, and glycerol filling.",
+            "Produced dozens of sensor variants in order to optimize fabrication protocols.",
+            "Fabricated the embedded fiber-optic sensor using 2 fibers held a fixed distance apart with microcatheter tubing.",
             "Designed the wrist-mounted housing and explored miniature custom fiber couplers for a future miniaturized revision."
+            
           ]
         },
         {
           "title": "Mechanism",
           "body": [
-            "The sensing concept converted artery-driven deformation into a measurable optical signal."
+            "The sensing concept converts artery-driven deformation into a measurable optical signal."
           ],
           "bullets": [
             "Light is transmitted between two aligned optical fibers, across a gap maintained between the fibers by means of a short length of microcatheter tubing.",
@@ -80,7 +107,149 @@
         "/images/projects/olevius/Joint.png"
       ]
     },
-    
+    {
+      "title": "GPU-Accelerated Diffraction & Lens Simulator",
+      "dates": "June 2025 - July 2025",
+      "blurb": "Interactive wave-optics simulation tool for modeling optical propagation and lens behavior.",
+      "cover": "/images/projects/lens-sim/1mm_biconvex_lens.png",
+      "link": "https://github.com/LeviBrunelle/PyTorch_Diffraction_Simulation",
+      "link_text": "View Github Repo",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": [
+            "Built a Python-based optical simulation tool for modeling scalar diffraction, lens focusing, and image-quality metrics in configurable optical systems."
+          ],
+          "bullets": [
+            "Developed the project to make diffraction simulations faster, more interactive, and easy to use.",
+            "Focused on realistic propagation through lens systems rather than simple textbook ray diagrams.",
+            "Used the simulator to explore how geometry, wavelength, aperture size, and lens configuration affect optical field propagation and focusing behavior."
+          ]
+        },
+        {
+          "title": "Simulation Method",
+          "body": [],
+          "bullets": [
+            "Implemented scalar wave-optics propagation to simulate 2D XZ-plane optical intensity fields through lens systems.",
+            "Represented optical components as refractive-index structures on a simulation grid, allowing arbitrary lens geometries to be placed in the optical path.",
+            "Supported multi-element lens systems, configurable wavelength, field angle, refractive index, aperture size, grid resolution, and propagation distance.",
+            "Propagated optical fields using a Fourier-domain split-step wave propagation method, alternating between propagation in spatial-frequency space and refractive-index updates in real space.",
+            "Generated intensity maps that show beam propagation, focusing, diffraction effects, and field evolution through the simulated optical system."
+          ]
+        },
+        {
+          "title": "GPU Acceleration",
+          "body": [],
+          "bullets": [
+            "Implemented the numerical simulation backend in PyTorch to support GPU acceleration for large grid-based optical calculations.",
+            "Achieved approximately 10x speedup compared with CPU execution on open-source libraries like DiffrctIO, making parameter sweeps and design iteration more practical.",
+            "Used vectorized tensor operations to reduce simulation time and keep the tool responsive during interactive design changes."
+          ]
+        },
+        {
+          "title": "Optical Analysis",
+          "body": [],
+          "bullets": [
+            "Added analysis tools for point spread function, modulation transfer function, effective focal length, and back focal length.",
+            "Used simulated intensity fields to compare focal spot size, focal position, and image-quality behavior across different lens parameters.",
+            "Created visual outputs for lens geometry, refractive-index distribution, propagated intensity, and performance metrics."
+          ]
+        },
+        {
+          "title": "Interface & Workflow",
+          "body": [],
+          "bullets": [
+            "Built a Streamlit interface for adjusting simulation parameters, running models, and visualizing results without editing code.",
+            "Designed the UI around fast iteration, with controls for source parameters, grid settings, optical components, and analysis outputs.",
+            "Used plots and image-based visualizations to make optical behavior easier to interpret and debug."
+          ]
+        }
+      ],
+      "skills": [
+        "Python",
+        "PyTorch",
+        "NumPy",
+        "Scalar Wave Optics",
+        "Diffraction Simulation",
+        "Optical Propagation",
+        "Lens Design",
+        "GPU Acceleration",
+        "Streamlit",
+        "Data Visualization",
+        "Object-Oriented Programming"
+      ],
+      "gallery": [
+        "/images/projects/lens-sim/gui1.png",
+        "/images/projects/lens-sim/gui2.png",
+        "/images/projects/lens-sim/gui3.png",
+        "/images/projects/lens-sim/gui4.png"
+      ]
+    },
+    {
+      "title": "Semiconductor Device Fabrication Labs",
+      "dates": "2024 - 2026",
+      "blurb": "Cleanroom fabrication and characterization of MIS capacitors and surface-micromachined MEMS actuators.",
+      "cover": "/images/projects/semiconductor/ETA.png",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": [
+            "Selected university cleanroom labs focused on semiconductor device processing, thin-film deposition, photolithography, etching, and device characterization."
+          ],
+          "bullets": [
+            "Fabricated and characterized MIS capacitor and MEMS actuator devices using multi-step cleanroom process flows.",
+            "Connected fabrication steps, film properties, device geometry, and electrical measurements to final device behavior.",
+            "Built practical experience with semiconductor processing, process documentation, metrology, and device-level analysis."
+          ]
+        },
+        {
+          "title": "MIS Capacitors",
+          "body": [],
+          "bullets": [
+            "Fabricated metal-insulator-semiconductor capacitors using photolithography, PECVD SiN deposition, sputtered Al metallization, RIE, and wet etching.",
+            "Characterized film thickness, pattern transfer, and device structure using ellipsometry and Dektak stylus profilometry.",
+            "Measured device behavior using I-V and C-V characterization to evaluate leakage and capacitance response.",
+            "Analyzed measurement results to connect dielectric quality, interface behavior, and fabrication variation with observed device characteristics."
+          ]
+        },
+        {
+          "title": "MEMS Actuators",
+          "body": [],
+          "bullets": [
+            "Fabricated surface-micromachined MEMS actuator structures using photolithography, PECVD SiN deposition, DC sputtering, wet etching, and RIE release.",
+            "Used thin-film patterning and release-style processing to create suspended MEMS structures from deposited device layers.",
+            "Characterized fabricated devices using four-point probe measurements, stylus profilometry, optical microscopy, and I-V/C-V measurements.",
+            "Evaluated how film properties, process tolerances, etch behavior, and release quality affected final MEMS actuator geometry and performance."
+          ]
+        },
+        {
+          "title": "Characterization & Analysis",
+          "body": [],
+          "bullets": [
+            "Used ellipsometry and profilometry to verify film thicknesses, step heights, and process outcomes after deposition and etching steps.",
+            "Used optical microscopy to inspect lithography quality, pattern fidelity, alignment, and post-release device structures.",
+            "Performed electrical characterization to compare fabricated device behavior against expected semiconductor and MEMS device response.",
+            "Documented process results and interpreted fabrication issues through measured electrical, optical, and geometric data."
+          ]
+        }
+      ],
+      "skills": [
+        "Cleanroom Fabrication",
+        "Photolithography",
+        "PECVD",
+        "Sputtering",
+        "RIE",
+        "Wet Etching",
+        "Ellipsometry",
+        "Dektak Profilometry",
+        "Four-Point Probe",
+        "I-V/C-V Measurements",
+        "Semiconductor Devices",
+        "Process Flow Analysis"
+      ],
+      "gallery": []
+    },
+
     {
       "title": "Autonomous EV Charging Location Optimizer",
       "dates": "Dec 2025",
@@ -106,97 +275,44 @@
     },
 
     {
-      "title": "GPU-Accelerated Lens Simulator",
-      "dates": "June 2025 - July 2025",
-      "blurb": "GPU-accelerated diffraction modeling with a Streamlit UI.",
-      "cover": "/images/projects/lens-sim/1mm_biconvex_lens.png",
-      "link": "https://github.com/LeviBrunelle/PyTorch_Diffraction_Simulation",       
-      "link_text": "View Github Repo",
-      "bullets": [
-        "~10x speedup (vs CPU) via GPU acceleration with PyTorch.",
-        "Can accommodate arbitrary number of lens elements in the optical path.",
-        "Simulation metrics include PSF, MTF, effective and back focal lengths.",
-        "Visualization of 2D intensity field with optional dark mode.",
-        "Custom Streamlit UI for fast, responsive parameter tweaking.",
-        "Plans to add many more features, including different optical components and metrics."
-      ],
-      "skills": ["Python", "PyTorch", "Scalar Wave Optics", "OOP", "Streamlit"],
-      "gallery": [
-        "/images/projects/lens-sim/gui1.png",
-        "/images/projects/lens-sim/gui2.png",
-        "/images/projects/lens-sim/gui3.png",
-        "/images/projects/lens-sim/gui4.png"
-      ]
-    },
-
-    
-
-    {
-      "title": "Knife Vise",
-      "dates": "September 2025",
-      "blurb": "3-axis benchtop vise for securely holding knives during hand sanding.",
-      "cover": "/images/projects/knife-vise/cover.png",
-      "bullets": [
-        "3 degrees of freedom allows for precise positioning and stability.",
-        "Features adjustable clamps to securely hold various blade shapes.",
-        "Compact design fits on most workbenches without sacrificing space.",
-        "Spring loaded jaws for quick and easy release of the blade.",
-        "Will be fabricated this winter break."
-      ],
-      "skills": ["Fusion360"],
-      "gallery": [
-        "/images/projects/knife-vise/img1.png",
-        "/images/projects/knife-vise/img2.png",
-        "/images/projects/knife-vise/img3.png"
-      ]
-    },
-
-    {
-      "title": "2x72 Belt Grinder",
-      "dates": "February 2025",
-      "blurb": "3hp belt grinder for knife making and metal fabrication.",
+      "title": "Shop-Built 2x72 Belt Grinder & Surface Grinding Attachment",
+      "dates": "February 2025 - December 2025",
+      "blurb": "Designed and fabricated a 3 hp 2x72 belt grinder and precision surface-grinding attachment for bladesmithing and metal fabrication.",
       "cover": "/images/projects/grinder/img1.png",
       "bullets": [
-        "3hp motor with vfd means the belt will maintain speed under any load.",
-        "2-axis belt tracking system ensures consistent alignment and prevents wobble.",
-        "Can be tilted from 0-90 degrees for different grinding tasks.",
-        "Accepts industry standard 1.5\" square tooling arms in case I'd rather buy an attachment than make one.",
-        "Adjustable work rest, small wheel holder, various contact wheels, different platen hardnesses, and surface grinder"
+        "Designed and built a 3 hp variable-speed 2x72 belt grinder for knife making, metal fabrication, and precision grinding workflows.",
+        "Built the grinder around standard 1.5\" tooling arms to support modular attachments, contact wheels, platens, small-wheel holders, and work rests.",
+        "Designed a tilting frame and belt-tracking system to support horizontal and vertical grinding configurations.",
+        "Fabricated the grinder using CAD, CNC laser-cut parts, welding, manual machining, fitting, and assembly.",
+        "Designed and machined a surface-grinding attachment with a rigid dovetail feed mechanism and UHMW gibs for smooth, controlled travel.",
+        "Built a switchable-magnet chuck with an integrated sine-bar feature to hold workpieces securely and grind controlled tapers.",
+        "Used the project to develop practical experience in machine design, fabrication tolerance stackups, rigidity, alignment, and iterative mechanical debugging."
       ],
-      "skills": ["Fusion360", "Sheet Metal Design", "MIG Welding", "Manual Lathe", "Manual Mill", "CNC Laser Cutting"],
+      "skills": [
+        "Fusion 360",
+        "Machine Design",
+        "Sheet Metal Design",
+        "MIG Welding",
+        "Manual Mill",
+        "Manual Lathe",
+        "CNC Laser Cutting",
+        "Fabrication",
+        "Grinding",
+        "Fixture Design"
+      ],
       "gallery": [
         "/images/projects/grinder/img1.png",
         "/images/projects/grinder/img2.png",
         "/images/projects/grinder/img3.png",
         "/images/projects/grinder/img4.png",
         "/images/projects/grinder/img5.png",
-        "/images/projects/grinder/img6.png"
-      ]
-    },
-
-    {
-      "title": "Surface Grinding Attachment",
-      "dates": "December 2025",
-      "blurb": "Attachment for 2x72 belt grinder to enable precise surface grinding capabilities.",
-      "cover": "/images/projects/surface/img1.png",
-      "bullets": [
-        "Standard 1.5\" tooling arm to fit in most grinders",
-        "Entirely manually machined aluminum body.",
-        "Includes 7 switchable magnets in the chuck to hold workpieces securely.",
-        "Rigid dovetail feed mechanism with UHMW gibs for smooth, tight control.",
-        "Sine bar built into the chuck to allow for grinding precise tapers.",  
-        "Extra wide 3\" contact wheel for tracking back and forth across a wide workpiece."
-      ],
-      "skills": ["Fusion360", "Manual Mill"],
-      "gallery": [
+        "/images/projects/grinder/img6.png",
         "/images/projects/surface/img1.png",
         "/images/projects/surface/img2.png",
         "/images/projects/surface/img3.png",
         "/images/projects/surface/img4.png",
         "/images/projects/surface/img5.png"
-
       ]
     }
-
   ]
 }

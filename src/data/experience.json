@@ -4,17 +4,49 @@
       "title": "Lithography Intern",
       "company": "Irradiant Technologies",
       "location": "Boston, MA",
-      "dates": "May 2025 - Aug 2025",
+      "dates": "April 2025 - August 2025",
+      "blurb": "2-photon lithography, optical simulation, and process optimization",
       "logo": "/images/jobs/irradiant_logo.png",
       "link": "https://github.com/LeviBrunelle/PyTorch_Diffraction_Simulation",       
       "link_text": "View Github Repo",
-      "bullets": [
-        "Proposed, designed, and built an image-processing pipeline in Python to detect sample interfaces on a 2-photon lithography system, applying piecewise regression models and vectorized array calculations to generate 3D surface maps of warping, tilt, and roughness for precise print-plane calibration.",
-        "Built a GPU-accelerated lens simulation tool in PyTorch with a Streamlit GUI, enabling ~10x speedup in realistic diffraction modeling of complex optical systems.",
-        "Synthesized porous silicon wafers via sol-gel processing and characterized microstructure-property relationships using SEM and mechanical testing (nanoindentation, tensile, compression), linking pore and crack morphology to strength for tuning supercritical CO2 drying and kiln-anneal process parameters.",
-        "Designed and fabricated optical components using 2-photon lithography, validated performance using image-analysis scripts and metrology tools.",
-        "Modeled and machined precise mounting components for optical breadboard setups, enabling the optical engineers to create more complex custom lithography and metrology systems."
+
+      "sections": [
+        {
+          "title": "Overview",
+          "body": [],
+          "bullets": [
+            "Built software and hardware tools to improve calibration, modeling, measurement, and experimental workflow reliability.",
+            "Contributed to projects spanning 2-photon lithography, optical metrology, porous silicon processing, and sample washing optimization."
+          ]
+        },
+        {
+          "title": "Lithography & Metrology",
+          "body": [],
+          "bullets": [
+            "Proposed, designed, and built a Python image-processing pipeline for a 2-photon lithography system to detect sample interfaces and generate 3D maps of warping, tilt, and roughness.",
+            "The pipeline applied piecewise regression, vectorized array operations, and automated fitting routines to support print-plane calibration on non-ideal or warped substrates.",
+            "Designed and fabricated optical components using 2-photon lithography, then validated feature quality and performance using confocal microscopy, in-house metrology tools, and custom image-analysis scripts."
+          ]
+        },
+        {
+          "title": "Optical Simulation Project",
+          "body": ["Project overview and repo link can be found in the projects section."],
+          "bullets": [
+            "Built a GPU-accelerated diffraction simulation tool in PyTorch with an interactive Streamlit interface for modeling complex optical systems.",
+            "Implemented scalar wave-optics propagation and analysis tools to estimate intensity fields, focal behavior, PSF, MTF, effective focal length, and back focal length.",
+            "Improved simulation speed by approximately 10x compared with CPU execution, making parameter sweeps and design iteration more practical."
+          ]
+        },
+        {
+          "title": "Materials Processing & Characterization",
+          "body": [],
+          "bullets": [
+            "Assisted in synthesizing porous silicon wafers using sol-gel processing and helped tune process parameters for drying and annealing.",
+            "Characterized porous silicon microstructure and mechanical behavior using SEM, nanoindentation, tensile testing, and compression testing."
+          ]
+        }
       ],
+
       "skills": ["Python","PyTorch","Scikit","SciPy","NumPy","Image Processing","Wave Optics","2-Photon Lithography","Confocal Microscopy","Streamlit"]
     },
 
@@ -22,15 +54,53 @@
       "title": "R&D Engineering Intern",
       "company": "Terray Therapeutics",
       "location": "Pasadena, CA",
-      "dates": "Sep 2023 - Apr 2024",
+      "dates": "May 2023 - Aug 2023; Sep 2023 - Apr 2024",
       "logo": "/images/jobs/terray_logo.png",
-      "bullets": [
-        "Designed and fabricated a 3-axis AC electromagnetic microscope stage using Fusion360, CNC, and manual machining to enable live nanoparticle manipulation.",
-        "Developed image processing scripts using NumPy, Scikit-Learn, Pandas, and ImageJ to extract and analyze intensity data, ultimately discovering a more efficient surface chemistry for microarrays and improving loading efficiency by 20%.",
-        "Optimized microarray loading procedure by designing and printing custom sample holders, reducing touchpoints from 12 to 5.",
-        "Performed experiments on gold-thiol and nitride functionalized coatings for silicon microarrays to reduce non-specific binding of bio-enabled nanoparticles."
+      "blurb": "Surface chemistry, microarray process development, image analysis, and custom experimental hardware.",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": [
+            "Worked in an interdisciplinary R&D environment developing and improving microarray-based workflows for bio-enabled iron nanoparticle experiments."
+          ],
+          "bullets": [
+            "Supported surface chemistry, assay preparation, fluorescence imaging, image analysis, mechanical fixture design, and experimental process optimization.",
+            "Worked on both day-to-day experimental execution and longer-term tooling/process improvements."
+          ]
+        },
+        {
+          "title": "Surface Chemistry & Microarrays",
+          "body": [],
+          "bullets": [
+            "Performed experiments on gold-thiol and nitride-functionalized silicon microarray coatings to reduce non-specific binding and improve nanoparticle loading behavior in microwells.",
+            "Prepared, handled, and evaluated microarray samples through surface treatment, loading, washing, imaging, and analysis workflows.",
+            "Compared surface chemistries and process conditions using fluorescence microscopy and quantitative image analysis using Python and ImageJ."
+          ]
+        },
+        {
+          "title": "Data Analysis & Process Optimization",
+          "body": [],
+          "bullets": [
+            "Developed Python and ImageJ analysis workflows to extract fluorescence intensity data from microarray images and compare loading efficiency across experimental conditions.",
+            "Used NumPy, Pandas, Scikit-learn, and ImageJ to process microscopy data, identify trends, and support experimental decisions.",
+            "Optimized the microarray loading workflow by designing custom sample holders that reduced handling touchpoints from 12 to 5."
+          ]
+        },
+        {
+          "title": "Custom Microscope Stage Project",
+          "body": [],
+          "bullets": [
+            "Designed and fabricated a 3-axis AC electromagnetic microscope stage for live optical imaging of bio-enabled iron nanoparticle manipulation experiments.",
+            "Simulated electromagnetics in COMSOL and modeled components in Fusion 360.",
+            "Fabricated with both manual and CNC machinined components.",
+            "Built custom tooling to repeatably wind custom electromagnet coils around non-regular core geometries. "
+          ]
+        }
       ],
-      "skills": ["Surface Chemistry", "Python", "Image Processing", "Electromag", "DNA Click", "Fluorescent Microscopy", "Fusion360"]
+    
+      "skills": [
+        "Surface Chemistry","Microarrays","Fluorescence Microscopy","Python","NumPy","Pandas","Scikit-Learn","ImageJ","Experimental Design","Process Optimization","Fusion 360", "Fabrication"
+      ]
     },
 
     {
@@ -39,11 +109,39 @@
       "location": "Maitland, ON",
       "dates": "May 2022 - Aug 2022",
       "logo": "/images/jobs/evonik_logo.png",
-      "bullets": [
-        "Engineered a project to fix the RO water filtration system by processing instrument data with Pandas, performing water tests, and doing Root Cause Analysis to find and replace components and chemicals, saving the plant an estimated $60 000/year.",
-        "Specced, procured, and replaced plant instruments."
+      "blurb": "Plant troubleshooting, reverse-osmosis process improvement, instrumentation, and root-cause analysis.",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": [
+            "Supported process engineering work in a chemical manufacturing environment, with a focus on troubleshooting plant systems, improving reliability, and supporting instrumentation upgrades."
+          ],
+          "bullets": [
+            "Worked with process data, water testing, operators, maintenance staff, and engineering personnel to diagnose and resolve plant issues."
+          ]
+        },
+        {
+          "title": "Reverse Osmosis Project",
+          "body": [],
+          "bullets": [
+            "Led a troubleshooting project on the plant RO water filtration system using instrument data, water testing, and root-cause analysis.",
+            "Processed and analyzed system data in Python/pandas and Excel to identify abnormal behavior and narrow down likely failure modes.",
+            "Identified and supported replacement of problematic components and treatment chemicals, improving RO system performance.",
+            "Delivered an estimated annual savings of approximately $60,000 through reduced operating cost and improved system reliability."
+          ]
+        },
+        {
+          "title": "Plant Instrumentation & Engineering Support",
+          "body": [],
+          "bullets": [
+            "Specified, procured, and supported replacement of plant instruments used in production and utility systems.",
+            "Coordinated with vendors, maintenance, and operations to ensure replacement parts met process requirements.",
+            "Built practical experience reading plant data, understanding process constraints, and solving problems in an operating industrial environment."
+          ]
+        }
       ],
-      "skills": ["Data Processing", "Root Cause Analysis", "Plant Instrumentation", "Process Engineering", "Reverse Osmosis", "Excel VBA"]
+
+      "skills": ["Data Processing", "Root-Cause Analysis", "Plant Instrumentation", "Data Processing", "Process Engineering", "Reverse Osmosis", "Excel VBA"]
     },
 
     {
@@ -54,11 +152,39 @@
       "logo": "/images/jobs/archangel_logo.jpg",
       "link": "https://www.instagram.com/archangelironworks/",       
       "link_text": "View Instagram Profile",
-      "skills": ["Bladesmithing", "Blacksmithing", "Welding", "Metal Fabrication", "Manual Machining", "Woodworking", "Jewelry Making"],
-      "bullets": [
-        "Designs and creates performance custom blades, pattern-welded (Damascus) steel, and jewelry.",
-        "Fabricates shop equipment such as belt grinders and forging presses using SMAW/GMAW, manual machining, and other fabrication techniques."
-      ]
+      "blurb": "Self-employed bladesmithing and metalworking",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": [
+            "Founded and operate a small bladesmithing and metalworking practice focused on custom knives, pattern-welded steel, jewelry, tooling, and shop-built fabrication equipment."
+          ],
+          "bullets": [
+            "Developing hands-on skills by crafting unique custom blades and tools."
+          ]
+        },
+        {
+          "title": "Bladesmithing & Materials",
+          "body": [],
+          "bullets": [
+            "Sketch unique blade and tool designs that balance aesthetic beauty with functional ergonomics.",
+            "Create custom blades using forging, grinding, heat treatment, hand finishing, woodworking, and sharpening.",
+            "Produce organic and mosaic pattern-welded steel and other layered blade constructions, balancing material selection, forge-welding parameters, thermal cycling, and final performance.",
+            "Apply practical metallurgy through steel selection, normalization, quenching, tempering, hardness control, and edge-geometry development."
+          ]
+        },
+        {
+          "title": "Fabrication & Tooling",
+          "body": [],
+          "bullets": [
+            "Fabricate shop equipment including a hydraulic forging press, belt grinders, grinding attachments, fixtures, and other metalworking equipment.",
+            "Use MIG/SMAW welding, manual machining, grinding, surface finishing, and electrical/hydraulic work to build functional tools and finished products.",
+            "Design parts and assemblies in CAD, then iterate through fabrication, testing, and refinement."
+          ]
+        }
+      ],
+
+      "skills": ["Bladesmithing", "Blacksmithing", "Welding", "Metal Fabrication", "Manual Machining", "Woodworking", "Jewelry Making"]
     }
 
   ]

@@ -26,6 +26,7 @@ export function mountExperience(){
     title:   r.title,
     dates:   r.dates,
     blurb:   r.company,
+    sections: r.sections,
     bullets: r.bullets,
     skills:  r.skills,
     gallery: r.gallery,
