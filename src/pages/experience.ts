@@ -4,7 +4,7 @@ import { typewriter }    from "../components/typewriter";
 import { cardHTML }      from "../components/expander";
 import experience        from "../data/experience.json";
 import { mountLightbox } from "../components/lightbox";
-import { revealStagger } from "../components/reveal";
+import { revealStaggerOnLoad } from "../components/reveal";
 
 // path normalizer
 const fix = (p?: string) => (p ? (p.startsWith("/images/") ? p : `/images/${p}`) : undefined);
@@ -53,7 +53,6 @@ export function mountExperience(){
   mountLightbox();
 
   const _cards = Array.from(document.querySelectorAll<HTMLDetailsElement>(".xp-list details.card"));
-  _cards.forEach((el, i) => el.style.setProperty("--d", `${i*90}ms`));
   _cards.forEach(el => el.classList.add("reveal-base", "reveal-up"));
-  revealStagger(_cards, { step: 90, start: 0 });
+  revealStaggerOnLoad(_cards, { step: 90, start: 0 });
 }

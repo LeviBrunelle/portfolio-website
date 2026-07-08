@@ -28,6 +28,27 @@ export function revealStagger(
   }
 }
 
+export function revealStaggerOnLoad(
+  nodes: Iterable<HTMLElement>,
+  opts: { step?: number; start?: number } = {}
+) {
+  const step  = opts.step  ?? 90;
+  const start = opts.start ?? 0;
+
+  const els = Array.from(nodes);
+
+  els.forEach((el, i) => {
+    el.style.setProperty("--d", `${start + i * step}ms`);
+  });
+
+  // Let reveal-base/reveal-up apply first, then trigger the transition.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      els.forEach((el) => el.classList.add("reveal-in"));
+    });
+  });
+}
+
 /**
  * Auto-detects elements on the current page and applies reveal classes
  */
@@ -47,17 +68,17 @@ export function initRevealsForCurrentPage() {
   }
 
 
-  // PROJECTS: each card slides in one after another
+  // PROJECTS: reveal all cards once the page loads
   if (path.includes("projects")) {
     const cards = document.querySelectorAll<HTMLElement>("details.card, .card");
-    cards.forEach(el => el.classList.add("reveal-base","reveal-up"));
-    revealStagger(cards, { step: 90, start: 0 });
+    cards.forEach(el => el.classList.add("reveal-base", "reveal-up"));
+    revealStaggerOnLoad(cards, { step: 90, start: 0 });
   }
 
-  // EXPERIENCE: each card slides in one after another
+  // EXPERIENCE: reveal all cards once the page loads
   if (path.includes("experience")) {
     const cards = document.querySelectorAll<HTMLElement>(".xp-card, details.card, .card");
-    cards.forEach(el => el.classList.add("reveal-base","reveal-up"));
-    revealStagger(cards, { step: 90, start: 0 });
+    cards.forEach(el => el.classList.add("reveal-base", "reveal-up"));
+    revealStaggerOnLoad(cards, { step: 90, start: 0 });
   }
 }
